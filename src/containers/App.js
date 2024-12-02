@@ -27,12 +27,11 @@ function App() {
 
   return (
     <div className="App">
-        <h1>ISS Tracker</h1>
-        <h3>Updated at: {unixConvert(locData.timestamp)}</h3>
-        <h5>Longitude: {long}</h5>
-        <h5>Latitude: {lat}</h5>
-        <button onClick={() => setCount(count+1)}>Update</button>
+        <h1>ISS TRACKER</h1>
         <Map long = {Number(long)} lat = {Number(lat)}></Map>
+        <h3>Updated at: {unixConvert(locData.timestamp)}</h3>
+        <button onClick={() => setCount(count+1)}>Update</button>
+        <p>Longitude: {long}; Latitude: {lat};</p>
     </div>
   );
 }

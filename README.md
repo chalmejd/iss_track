@@ -1,3 +1,7 @@
+# Simple Internation Space Station Tracking App
+
+Uses Open Notify [ISS Current Location API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

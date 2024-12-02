@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Nasalization';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nasalization RG'), url('Nasalization Rg.otf') format('opentype');
+}
+
+h1 {
+  font-family: 'Nasalization';
+  font-weight: 400;
+  color: #000000;
+  font-size: 4rem;
+}
