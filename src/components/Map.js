@@ -5,7 +5,6 @@ const geoUrl =
   "https://code.highcharts.com/mapdata/custom/world-continents.topo.json"
 
 function Map(coords) {
-    console.log(coords)
   return (
     <ComposableMap
         projection="geoEqualEarth"

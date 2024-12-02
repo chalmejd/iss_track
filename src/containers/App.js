@@ -7,11 +7,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    try{
       fetch('http://api.open-notify.org/iss-now.json')
       .then(resp => resp.json())
       .then(current => setLocData(current)); 
-    } catch{}
   },[count])
 
   const unixConvert = (timestamp) => {
