@@ -2,6 +2,8 @@
 
 Uses Open Notify [ISS Current Location API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
 
+Currently cannot build because of unknown issue with react-simple-maps causing "Unexpected end of json input" errors.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
