@@ -1,5 +1,6 @@
-import React from "react"
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps"
+import React from "react";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import './Map.css';
 
 const geoUrl =
   "https://code.highcharts.com/mapdata/custom/world-continents.topo.json"
@@ -7,6 +8,7 @@ const geoUrl =
 function Map(coords) {
   return (
     <ComposableMap
+        className="Map"
         projection="geoEqualEarth"
         projectionConfig={{
             rotate: [0, 0, 0],
@@ -22,7 +24,7 @@ function Map(coords) {
         }
       </Geographies>
       <Marker coordinates={[coords.long, coords.lat]}>
-        <circle r={3} fill="#0000ff" />
+        <circle r={5} fill="#FC3D21" />
       </Marker>
     </ComposableMap>
   )

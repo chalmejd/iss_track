@@ -11,7 +11,12 @@
 
 h1 {
   font-family: 'Nasalization';
-  font-weight: 400;
+  font-weight: 100;
   color: #000000;
   font-size: 4rem;
+}
+
+Map {
+  max-width: 100rem;
+  max-height: 100rem;
 }

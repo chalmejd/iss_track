@@ -4,13 +4,32 @@ import Map from '../components/Map';
 
 function App() {
   const [locData, setLocData] = useState({timestamp:"0", iss_position: {longitude: "0", latitude: "0"}});
-  const [count, setCount] = useState(0)
-
+  const [intervalID, setIntervalID] = useState(0);
+  const [shouldIntervalBeCancelled, setShouldIntervalBeCancelled] = useState(false);
+  
+  // For starting the interval ->
   useEffect(() => {
+      let intervalID = setInterval(updateLocation, 5000);
+      setIntervalID(intervalID);
+    }, []);
+  
+  useEffect(() => {
+      if (shouldIntervalBeCancelled) {
+        clearInterval(intervalID); 
+      }
+    }, [shouldIntervalBeCancelled]);
+
+  function updateLocation() {
+    try {
       fetch('http://api.open-notify.org/iss-now.json')
       .then(resp => resp.json())
-      .then(current => setLocData(current)); 
-  },[count])
+      .then(current => setLocData(current));
+      setShouldIntervalBeCancelled(true); 
+    } catch {
+      
+    }
+  }
+      
 
   const unixConvert = (timestamp) => {
     var date = new Date(timestamp * 1000);
@@ -26,12 +45,14 @@ function App() {
   return (
     <div className="App">
         <h1>ISS TRACKER</h1>
-        <Map long = {Number(long)} lat = {Number(lat)}></Map>
         <h3>Updated at: {unixConvert(locData.timestamp)}</h3>
-        <button onClick={() => setCount(count+1)}>Update</button>
         <p>Longitude: {long}; Latitude: {lat};</p>
+        <Map long = {Number(long)} lat = {Number(lat)} className='Map'></Map>
+        
+        
     </div>
   );
+
 }
 
 export default App;
